@@ -1,0 +1,329 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html, body {
+    height: 100%;
+    /* background: black; */
+    color: white;
+    font-family: sans-serif;
+  }
+
+  body{
+    background: url('images/elevenBg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  }
+  
+  /* HERO SECTION */
+  .video-hero {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* THIS is the masking viewport */
+  .video-viewport {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    clip-path: inset(0 0 0 0);
+    -webkit-clip-path: inset(0 0 0 0);
+  }
+  
+  /* fixed video behind everything */
+  .background-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    z-index: 0;
+  }
+  
+  /* Red glow inside the hero box only */
+  .glow-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    box-shadow: inset 0 0 8px 2px red;
+  }
+  
+  /* Calendar button */
+  .add-to-calendar {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 2;
+    padding: 12px 24px;
+    font-size: 16px;
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .add-to-calendar:hover {
+    background: darkred;
+  }
+  
+  /* Main content */
+  .main-content {
+    padding: 100px 20px;
+    background: black;
+  }
+
+  .trailerHeader h2{
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .yt-wrapper {
+    position: relative;
+    width: 90%;
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    margin: 0 auto;
+    box-shadow: 0 0 5px 2px red; /* pink glow */
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  .teamHeader{
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .teamText p{
+    color: white;
+    font-size: 1.5rem;
+    /* line-height: 2.5rem; */
+  }
+
+  .p1{
+    margin-bottom: 1.3rem;
+  }
+
+  .p2{
+    margin-bottom: 1.3rem;
+    line-height: 2rem;
+  }
+
+  .p3{
+    margin-bottom: 1.3rem;
+  }
+
+  .p6{
+    line-height: 2rem
+  }
+
+  .teamImage img{
+    width: 70%;
+  }
+
+  .fontHeader img{
+    width: 20%;
+    
+  }
+
+  .fontText{
+    color: white;
+    font-size: 2rem;
+    /* margin-bottom: 2rem */
+}
+
+  .paragraphHeader {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .paragraphText p{
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 4rem 0 4rem;
+  }
+
+  .galleryHeader{
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .gallery figure img{
+    width: 95%;
+  }
+
+  /* Footer base */
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    font-family: sans-serif;
+  }
+  
+  /* Top faded line */
+  .footer-line {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.3), transparent);
+    margin-bottom: 30px;
+  }
+  
+  /* Brand name */
+  .footer-brand {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  }
+  
+  /* Links */
+  .footer-links {
+    margin-bottom: 15px;
+  }
+  .footer-links a {
+    color: #aaa;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+  }
+  .footer-links a:hover {
+    color: #fff;
+  }
+  .footer-links span {
+    color: #666;
+  }
+  
+  /* Copyright */
+  .footer-copy {
+    font-size: 13px;
+    color: #777;
+  }
+
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 100;
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .whatsapp-float:hover {
+    transform: scale(1.1);
+  }
+  
+  .whatsapp-float img {
+    width: 30px;
+    height: 30px;
+  }
+
+/* row default code starts here */
+.grid-1 {
+display: grid;
+grid-template-columns: 1fr;
+}
+
+.grid-2 {
+display: grid;
+grid-template-columns: 1fr 1fr;
+}
+
+.grid-3 {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+}
+
+.grid-4 {
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.grid-5{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+}
+
+/* row default code ends here */
+
+
+/* Column default code starts here */
+.dflex {
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+}
+
+.dflex-col {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+text-align: center;
+}
+
+.dflex-left{
+display: flex;
+align-items: center;
+justify-content: left;
+text-align: left;
+}
+
+.dflex-left-col{
+display: flex;
+align-items: left;
+justify-content: center;
+text-align: left;
+flex-direction: column;
+}
+
+.dflex-right{
+display: flex;
+align-items: center;
+justify-content: right;
+text-align: right;
+}
+
+.dflex-right-col{
+display: flex;
+align-items: right;
+justify-content: center;
+text-align: right;
+flex-direction: column;
+}
+
+
+/* column default code ends here */
+
+/* component container starts here */
+
+.align{
+max-width: 1300px;
+margin: auto;
+padding: 0 3rem;
+}
+
+/* component container ends here */
+
+/* component starts here */
+
+.componentSpacing{
+padding: 3rem 0;
+}
