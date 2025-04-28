@@ -28,11 +28,11 @@
       <script>
         const video = document.getElementById('backgroundVideo');
       
-        // Unmute on first user click
-        window.addEventListener('click', function unmuteVideo() {
+        // Unmute only when the video itself is clicked
+        video.addEventListener('click', function unmuteVideo() {
           video.muted = false;
           video.play();
-          window.removeEventListener('click', unmuteVideo); // Remove listener after first click
+          video.removeEventListener('click', unmuteVideo); // Remove listener after first click
         });
       
         // Pause video after scrolling halfway
@@ -86,7 +86,7 @@
                 <div class="trailer grid-1">
                     <div class="wrapper">
                         <video playsinline controls class="teaserVideo">
-                            <source src="video/tamilTeaser.mp4" type="video/mp4" />
+                            <source src="video/ELEVEN TELUGU TEASER.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                           </video>
                     </div>
@@ -165,7 +165,7 @@
                 </div>
                 <div class="gallery grid-4">
                     <figure class="dflex">
-                        <img src="images/gallery1.png" alt="gallery1">
+                        <img src="images/gallery1.jpg" alt="gallery1">
                     </figure>
                     <figure class="dflex">
 
@@ -176,7 +176,7 @@
                         <img src="images/gallery4.png" alt="gallery4">
                     </figure>
                     <figure class="dflex">
-                        <img src="images/gallery3.jpg" alt="gallery3">
+                        <img src="images/gallery3.png" alt="gallery3">
                     </figure>
                 </div>
             </div>
@@ -190,14 +190,50 @@
                 <h2 class="footer-brand">ELEVEN</h2>
 
                 <div class="footer-links">
-                    <a href="#">Terms of Use</a>
-                    <span>|</span>
-                    <a href="#">Privacy Statement</a>
+                    <!-- <a>Terms of Use</a> -->
+                    <!-- <span>|</span> -->
+                    <a href="javascript:void(0)" id="privacyLink">Privacy Statement</a>
                 </div>
+
+
 
                 <p class="footer-copy">©2025 copyrights ATWIAS</p>
             </div>
         </footer>
+
+        <!-- hidden -->
+        <div id="privacyPopup" class="popup">
+            <div class="popup-content">
+              <span id="closePopup" class="close">&times;</span>
+              <p>Your privacy matters. We collect limited data to enhance your movie experience. 
+                 Information is never sold. By using this site, you consent to our cookie and 
+                 data practices. Contact us with concerns.
+              </p>
+            </div>
+          </div>
+
+          <!-- hidden -->
+
+
+          <script>
+            const privacyLink = document.getElementById('privacyLink');
+            const popup = document.getElementById('privacyPopup');
+            const closeBtn = document.getElementById('closePopup');
+          
+            privacyLink.addEventListener('click', function(event) {
+              popup.style.display = 'block';
+            });
+          
+            closeBtn.addEventListener('click', function() {
+              popup.style.display = 'none';
+            });
+          
+            window.addEventListener('click', function(event) {
+              if (event.target === popup) {
+                popup.style.display = 'none';
+              }
+            });
+          </script>
 
 
         <a href="https://wa.me/7395970309" class="whatsapp-float" target="_blank" rel="noopener">
