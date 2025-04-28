@@ -71,6 +71,25 @@
         height: auto;
         margin-bottom: 3rem;
     }
+    
+    .logoSection {
+        /* padding: 1rem 0; */
+      }
+    
+      .logo {
+        margin: 0;
+        height: 150px; /* Slightly smaller height */
+        width: 250px; /* FIXED wider width on mobile */
+        object-fit: contain; /* Keeps logos inside the box nicely */
+      }
+
+      .logoWrapper {
+        min-width: calc(7 * 250px * 2); /* 7 logos, 140px each, duplicated 2 times */
+      }
+    
+      .logoContainer {
+        animation: scrollLogos 25s linear infinite;
+      }
 
     .galleryComponent{
         padding: 0;

@@ -170,6 +170,37 @@
     padding: 0 4rem 0 4rem;
   }
 
+  /* Styling the logo section */
+  .logoSection {
+    width: 100%;
+    overflow: hidden;
+    padding: 2rem 0;
+  }
+  
+  .logoWrapper {
+    min-width: calc(7 * 400px * 2); /* 7 logos, 140px each, duplicated 2 times */
+  }
+  
+  .logoContainer {
+    display: flex;
+    animation: scrollLogos 40s linear infinite; /* Infinite animation */
+  }
+  
+  .logo {
+    margin: 0 1rem;
+    width: 400px; /* Set height for logos */
+  }
+  
+  /* Keyframes to move logos */
+  @keyframes scrollLogos {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%); /* Move by 50% (because you duplicated the logos) */
+    }
+  }
+
   .galleryHeader{
     color: white;
     font-size: 2rem;
