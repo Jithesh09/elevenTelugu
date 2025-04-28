@@ -21,6 +21,15 @@
         text-align: left;
     }
 
+    .paragraphComponent2{
+        padding: 0;
+    }
+
+    .paragraphContainer2{
+        padding: 0 1.5rem;
+        margin-bottom: 2rem;
+    }
+
     .fontHeader img{
         width: 60%;
     }

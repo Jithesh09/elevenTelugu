@@ -170,6 +170,18 @@
     padding: 0 4rem 0 4rem;
   }
 
+  .paragraphHeader2{
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .paragraphText2 p{
+    color: white;
+    font-size: 1.5rem;
+    padding: 0 4rem 0 4rem;
+  }
+
   /* Styling the logo section */
   .logoSection {
     width: 100%;
@@ -187,8 +199,9 @@
   }
   
   .logo {
-    margin: 0 1rem;
-    width: 400px; /* Set height for logos */
+    /* margin: 0 1rem; */
+    width: 300px;
+    height: 200px; /* Set height for logos */
   }
   
   /* Keyframes to move logos */
@@ -283,6 +296,135 @@
     width: 30px;
     height: 30px;
   }
+
+  /* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.popup-content {
+  background-color: #fff;
+  color: #000;
+  margin: 15% auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+  /* Popup container - hidden by default */
+.popup {
+  display: none; /* Hidden */
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.6); /* Black background with opacity */
+}
+
+/* Popup content box */
+.popup-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+/* Close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.popup-content {
+  background-color: #fff;
+  color: #000;
+  margin: 15% auto;
+  padding: 2rem;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 8px;
+  text-align: center;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  position: absolute;
+  top: 3px;
+  right: 10px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover {
+  color: black;
+}
 
   /* Popup container - hidden by default */
 .popup {
