@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
     <link rel="icon" href="images/ElevenLogoRed.png">
     <title>Eleven</title>
 </head>
@@ -13,32 +14,84 @@
 
     <header class="video-hero">
         <div class="video-viewport">
-          <video autoplay muted loop playsinline class="background-video">
-            <source src="video/heroBG.mp4" type="video/mp4" />
+          <video id="backgroundVideo" autoplay muted loop playsinline class="background-video">
+            <source src="video/heroBg.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
           <div class="glow-overlay"></div>
-          <button class="add-to-calendar">Add to Calendar</button>  
+          <!-- <button class="add-to-calendar">Add to Calendar</button>   -->
         </div>
       </header>
 
+      <!-- script for herovideo start -->
+
+      <script>
+        const video = document.getElementById('backgroundVideo');
+      
+        // Unmute on first user click
+        window.addEventListener('click', function unmuteVideo() {
+          video.muted = false;
+          video.play();
+          window.removeEventListener('click', unmuteVideo); // Remove listener after first click
+        });
+      
+        // Pause video after scrolling halfway
+        const observer = new IntersectionObserver(
+          ([entry]) => {
+            if (entry.intersectionRatio < 0.5) {
+              video.pause();
+            } else {
+              video.play();
+            }
+          },
+          {
+            threshold: [0.5],
+          }
+        );
+      
+        observer.observe(document.querySelector('.video-hero'));
+      </script>
+
+      <!-- script for herovideo end -->
+
     <main>
+        
+        <section class="paragraphComponent align">
+            <div class="paragraphContainer componentSpacing2">
+                <div class="paragraphHeader grid-1">
+                    <h2 class="dflex">
+                        Pioneering South Indian cinema with cutting-edge tech
+                    </h2>
+                </div>
+                <div class="paragraphText grid-1">
+                    <p class="dflex">We took colour grading to the next level in Eleven Movie, utilizing the upgraded
+                        Base Light 6.0 version at Redchillies Colour, one of India's top DI studios. Notably, Eleven
+                        Movie was the first film in South India to leverage this advanced technology</p>
+                </div>
+                <div class="fontHeader grid-1 dflex">
+                    <img src="images/elevenFont.png" alt="elevenFont">
+                </div>
+                <div class="fontText grid-1">
+                    <p class="dflex"></p>
+                </div>
+
+        </section>
+
+
         <section class="trailerComponent align">
             <div class="trailerContainer componentSpacing">
                 <div class="trailerHeader grid-1">
                     <h2 class="dflex">Teaser Released by Dhanush & Selvaraghavan</h2>
                 </div>
                 <div class="trailer grid-1">
-                    <div class="yt-wrapper">
-                        <iframe width="100%" height="100%"
-                            src="https://www.youtube.com/embed/4qxqZTBf5MY?si=eOMO3706h5bqCFpB"
-                            title="YouTube video player" frameborder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            allowfullscreen></iframe>
+                    <div class="wrapper">
+                        <video playsinline controls class="teaserVideo">
+                            <source src="video/tamilTeaser.mp4" type="video/mp4" />
+                            Your browser does not support the video tag.
+                          </video>
                     </div>
                 </div>
             </div>
-
         </section>
 
         <section class="teamComponent align">
@@ -74,30 +127,9 @@
                             </p>
                         </div>
                     </div>
-                    <div class="teamImage dflex">
+                    <div class="teamPicture dflex">
                         <img src="images/teamImage.jpeg" alt="teamImage">
                     </div>
-                </div>
-
-        </section>
-
-        <section class="paragraphComponent align">
-            <div class="paragraphContainer componentSpacing">
-                <div class="paragraphHeader grid-1">
-                    <h2 class="dflex">
-                        Pioneering South Indian cinema with cutting-edge tech
-                    </h2>
-                </div>
-                <div class="paragraphText grid-1">
-                    <p class="dflex">We took colour grading to the next level in Eleven Movie, utilizing the upgraded
-                        Base Light 6.0 version at Redchillies Colour, one of India's top DI studios. Notably, Eleven
-                        Movie was the first film in South India to leverage this advanced technology</p>
-                </div>
-                <div class="fontHeader grid-1 dflex">
-                    <img src="images/elevenFont.png" alt="elevenFont">
-                </div>
-                <div class="fontText grid-1">
-                    <p class="dflex"></p>
                 </div>
 
         </section>
