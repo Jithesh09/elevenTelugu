@@ -209,7 +209,8 @@
 
 
 
-                <p class="footer-copy">©2025 copyrights ATWIAS</p>
+                <p class="footer-copy">©2025 copyrights ELEVEN</p>
+                <p class="footer-copy">Powered by ATWIAS</p>
             </div>
         </footer>
 
@@ -226,7 +227,18 @@
 
           <!-- hidden -->
 
+          <!-- pop up -->
 
+          <div id="imagePopup" class="image-popup">
+            <div class="image-popup-content">
+              <span id="closePopup2" class="image-popup-close">&times;</span>
+              <img src="images/popupImage.jpeg" alt="Popup Image" style="width: 100%; height: auto;" />
+            </div>
+          </div>
+
+          <!-- pop up end -->
+
+          <!-- hidden code start -->
           <script>
             const privacyLink = document.getElementById('privacyLink');
             const popup = document.getElementById('privacyPopup');
@@ -245,6 +257,38 @@
                 popup.style.display = 'none';
               }
             });
+          </script>
+
+          <!-- hidden code end -->
+
+
+          <script>
+            window.onload = function () {
+              const imagePopupEl = document.getElementById("imagePopup");
+              const closeButtonEl = document.getElementById("closePopup2");
+        
+              function showPopup() {
+                imagePopupEl.style.display = "block";
+              }
+        
+              function hidePopup() {
+                imagePopupEl.style.display = "none";
+              }
+        
+              showPopup(); // Show on load
+              setInterval(showPopup, 20000); // Show every 20s
+        
+              closeButtonEl.addEventListener("click", function (event) {
+                event.stopPropagation(); // prevent closing from bubbling
+                hidePopup();
+              });
+        
+              window.addEventListener("click", function (event) {
+                if (event.target === imagePopupEl) {
+                  hidePopup();
+                }
+              });
+            };
           </script>
 
 
