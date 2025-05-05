@@ -78,22 +78,6 @@
                 </div>
 
         </section>
-
-        <section class="trailerComponent align">
-          <div class="trailerContainer componentSpacing">
-              <div class="trailerHeader grid-1">
-                  <h2 class="dflex">Trailer Released by Padma Bhushan DR.Kamal Haasan</h2>
-              </div>
-              <div class="trailer grid-1">
-                  <div class="wrapper">
-                      <video playsinline controls class="teaserVideo">
-                          <source src="video/ELEVEN TELUGU TRAILER.mp4" type="video/mp4" />
-                          Your browser does not support the video tag.
-                        </video>
-                  </div>
-              </div>
-          </div>
-      </section>
         
         <section class="paragraphComponent2 align">
             <div class="paragraphContainer2 componentSpacing2">
@@ -243,9 +227,37 @@
 
           <!-- hidden -->
 
+          <!-- pop up -->
+
+          <div id="imagePopup" class="image-popup">
+            <div class="image-popup-content">
+              <span id="closePopup2" class="image-popup-close">&times;</span>
+              <img src="images/popupImage.jpeg" alt="Popup Image" style="width: 100%; height: auto;" />
+            </div>
+          </div>
+
+          <!-- pop up end -->
 
           <!-- hidden code start -->
+          <script>
+            const privacyLink = document.getElementById('privacyLink');
+            const popup = document.getElementById('privacyPopup');
+            const closeBtn = document.getElementById('closePopup');
           
+            privacyLink.addEventListener('click', function(event) {
+              popup.style.display = 'block';
+            });
+          
+            closeBtn.addEventListener('click', function() {
+              popup.style.display = 'none';
+            });
+          
+            window.addEventListener('click', function(event) {
+              if (event.target === popup) {
+                popup.style.display = 'none';
+              }
+            });
+          </script>
 
           <!-- hidden code end -->
 
@@ -276,51 +288,49 @@
                   hidePopup();
                 }
               });
-            
+          
           </script>
 
 
-        
+<script>
+  var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?52734';
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.async = true;
+  s.src = url;
+  var options = {
+  "enabled":true,
+  "chatButtonSetting":{
+      "backgroundColor":"#00e785",
+      "ctaText":"Welcome to Eleven11",
+      "borderRadius":"25",
+      "marginLeft": "0",
+      "marginRight": "20",
+      "marginBottom": "20",
+      "ctaIconWATI":false,
+      "position":"right"
+  },
+  "brandSetting":{
+      "brandName":"Wati",
+      "brandSubTitle":"undefined",
+      "brandImg":"",
+      "welcomeText":"Welcome to Eleven11",
+      "messageText":"Hi",
+      "backgroundColor":"#00e785",
+      "ctaText":"Welcome to Eleven11",
+      "borderRadius":"25",
+      "autoShow":true,
+      "phoneNumber":"918122372485"
+  }
+  };
+  s.onload = function() {
+      CreateWhatsappChatWidget(options);
+  };
+  var x = document.getElementsByTagName('script')[0];
+  x.parentNode.insertBefore(s, x);
+       </script>
 
 
 </body>
-
-<script>
-    var url = 'https://wati-integration-prod-service.clare.ai/v2/watiWidget.js?52734';
-    var s = document.createElement('script');
-    s.type = 'text/javascript';
-    s.async = true;
-    s.src = url;
-    var options = {
-    "enabled":true,
-    "chatButtonSetting":{
-        "backgroundColor":"#00e785",
-        "ctaText":"Welcome to Eleven11",
-        "borderRadius":"25",
-        "marginLeft": "0",
-        "marginRight": "20",
-        "marginBottom": "20",
-        "ctaIconWATI":false,
-        "position":"right"
-    },
-    "brandSetting":{
-        "brandName":"",
-        "brandSubTitle":"undefined",
-        "brandImg":"",
-        "welcomeText":"Welcome to Eleven11",
-        "messageText":"Hi",
-        "backgroundColor":"#00e785",
-        "ctaText":"Welcome to Eleven11",
-        "borderRadius":"25",
-        "autoShow":true,
-        "phoneNumber":"918122372485"
-    }
-    };
-    s.onload = function() {
-        CreateWhatsappChatWidget(options);
-    };
-    var x = document.getElementsByTagName('script')[0];
-    x.parentNode.insertBefore(s, x);
-         </script>
 
 </html>
